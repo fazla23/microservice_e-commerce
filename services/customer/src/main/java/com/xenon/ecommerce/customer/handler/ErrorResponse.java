@@ -1,4 +1,4 @@
-package com.xenon.ecommerce.customer;
+package com.xenon.ecommerce.customer.handler;
 
 import java.util.Map;
 

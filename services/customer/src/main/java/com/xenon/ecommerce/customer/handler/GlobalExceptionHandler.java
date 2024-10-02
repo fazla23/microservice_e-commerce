@@ -1,6 +1,5 @@
 package com.xenon.ecommerce.customer.handler;
 
-import com.xenon.ecommerce.customer.ErrorResponse;
 import com.xenon.ecommerce.exception.CustomerNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

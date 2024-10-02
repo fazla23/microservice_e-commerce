@@ -5,11 +5,12 @@ import com.xenon.ecommerce.exception.CustomerNotFoundException;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang.StringUtils;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Serializer
+@Service
 @RequiredArgsConstructor
 public class CustomerService {
 
