@@ -6,6 +6,8 @@ import com.xenon.ecommerce.kafka.OrderConfirmation;
 import com.xenon.ecommerce.kafka.OrderProducer;
 import com.xenon.ecommerce.orderLine.OrderLineRequest;
 import com.xenon.ecommerce.orderLine.OrderLineService;
+import com.xenon.ecommerce.payment.PaymentClient;
+import com.xenon.ecommerce.payment.PaymentRequest;
 import com.xenon.ecommerce.product.ProductClient;
 import com.xenon.ecommerce.product.PurchaseRequest;
 import jakarta.persistence.EntityNotFoundException;
@@ -25,6 +27,7 @@ public class OrderService {
     private final OrderMapper mapper;
     private final OrderLineService orderLineService;
     private final OrderProducer orderProducer;
+    private final PaymentClient paymentClient;
 
     public Integer createOrder(@Valid OrderRequest request) {
         //Check the customer  --> openFeign
@@ -51,6 +54,14 @@ public class OrderService {
 
 
         //start payment process
+        var paymentRequest = new PaymentRequest(
+                request.amount(),
+                request.paymentMethod(),
+                order.getId(),
+                order.getReference(),
+                customer
+        );
+        paymentClient.requestOrderPayment(paymentRequest);
 
 
         //send the order confirmation --> notification-ms(kafka)

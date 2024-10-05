@@ -1,6 +1,5 @@
 package com.xenon.ecommerce.customer;
 
-import com.netflix.discovery.provider.Serializer;
 import com.xenon.ecommerce.exception.CustomerNotFoundException;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -32,11 +31,11 @@ public class CustomerService {
     }
 
     private void mergeCustomer(Customer customer, @Valid CustomerRequest request) {
-        if(StringUtils.isNotBlank(request.firstName())){
-            customer.setFirstName(request.firstName());
+        if(StringUtils.isNotBlank(request.firstname())){
+            customer.setFirstname(request.firstname());
         }
-        if(StringUtils.isNotBlank(request.lastName())){
-            customer.setLastName(request.lastName());
+        if(StringUtils.isNotBlank(request.lastname())){
+            customer.setLastname(request.lastname());
         }
         if(StringUtils.isNotBlank(request.email())){
             customer.setEmail(request.email());
