@@ -18,7 +18,7 @@ A scalable cloud-native e-commerce platform built with **Spring Boot 3** and **S
 | Category          | Technologies                          |
 |--------------------|---------------------------------------|
 | **Framework**      | Spring Boot 3, Spring Cloud           |
-| **Database**       | MySQL (Risage DB), MongoDB            |
+| **Database**       | MySQL (Relational DB), MongoDB            |
 | **Messaging**      | RabbitMQ/Kafka                        |
 | **Monitoring**     | Zipkin, Spring Cloud Sleuth           |
 | **Infrastructure** | Docker, Kubernetes, AWS/GCP (optional)|
@@ -31,8 +31,8 @@ A scalable cloud-native e-commerce platform built with **Spring Boot 3** and **S
 | API Gateway                      | Order Service                    |
 | Customer Service                 | Notification Service             |
 | Product Service                  | Source Server (On-prem)          |
-| Payment Service                  | Cloudy Server (Cloud deployment) |
-| Sandbox Payment Confirmation     | Risage DB (Primary Database)     |
+| Payment Service                  | Cloud Server (Cloud deployment) |
+| Sandbox Payment Confirmation     | Relational(Mysql) DB (Primary Database) |     |
 
 ### Core Components
 - **Acquisitions**: Customer onboarding and order initiation
